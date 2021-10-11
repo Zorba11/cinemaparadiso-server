@@ -6,9 +6,8 @@ const io = require('socket.io')(server, {
     origin: '*'
   }
 })
-const { v4: uuidV4 } = require('uuid')
 
-const PORT = 3000
+const PORT = process.env.PORT || 3000
 
 io.on('connection', socket => {
   socket.on('join-room', (roomId, userId) => {
